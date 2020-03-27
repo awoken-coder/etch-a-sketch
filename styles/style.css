@@ -1,0 +1,16 @@
+#containerGrid {
+    display: grid;
+    width: 95vmin;
+    height: 95vmin;
+    grid-template-columns: 20vmin 20vmin 20vmin 20vmin;
+    grid-template-rows: 20vmin 20vmin 20vmin 20vmin;
+    border-color: black;
+    border-radius: 5px;
+    border-width: 0.5vmin;
+    border-style: solid;
+}
+.cellCanvas {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+}
