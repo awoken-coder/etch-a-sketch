@@ -1,4 +1,4 @@
-allTogether(2, 3);
+allTogether(4, 4);
 btnClear.addEventListener('click', () => {
     allTogether()
 });
@@ -32,8 +32,8 @@ function changeColor(item, color) { //changes the color of a cell
         }
 
     };
-    a=typeof item.style.backgroundColor;
-    b=typeof color[0];
+    a = typeof item.style.backgroundColor;
+    b = typeof color[0];
 }
 function createGrid(numLin, numCol) { //creates the cell and puts it in the grid
     let numTotal = numCol * numLin;
@@ -61,19 +61,23 @@ function createContainer(numLin, numCol) { //creates a new container with a grid
     container.style.gridTemplateRows = strTemplateRows;
 };
 
-function allTogether() {
+function askSizeGrid() {
+    l = document.getElementById('lineBox').value;
+    c = document.getElementById('colBox').value;
+    return [l, c]
+}
+function allTogether(l, c) {
     generateArrayColorCode();
-
-    l = prompt('How many lines should the board have?');
-    c = prompt('How many rows should the board have?');
-
+    if (l == null) {
+      [l,c] = askSizeGrid();
+    }
     createContainer(l, c);
 
     createGrid(l, c);
 
     let cellCanvas = document.querySelectorAll('.cellCanvas');
     let colorWhite = ['white'];
-    cellCanvas.forEach(item =>{changeColor(item,colorWhite)})
+    cellCanvas.forEach(item => { changeColor(item, colorWhite) })
     cellCanvas.forEach(item => {
         item.addEventListener('mouseover', e => {
             changeColor(e.target, arrayColorCode)

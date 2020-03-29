@@ -1,3 +1,8 @@
+#container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
 #containerGrid {
     display: grid;
     width: 95vmin;
@@ -9,8 +14,31 @@
     border-width: 0.5vmin;
     border-style: solid;
 }
+#containerText {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+}
+#btnClear {
+    align-self: center;
+    left: 50%;
+    right: 50%;
+    margin-top: 10%;
+    font-weight: bold;
+}
 .cellCanvas {
     display: inline-block;
     height: 100%;
     width: 100%;
+}
+h1 {
+    font-size: 30px;
+    margin: 20% 0;
+}
+li {
+    padding: 1em 0;
+}
+.inputNumber {
+margin-right: 3rem;
 }
